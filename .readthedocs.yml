@@ -1,11 +1,12 @@
 version: 2
-default_branch: main
-branches:
-  - main
+ 
 build:
   os: ubuntu-24.04
   tools:
     python: "3.13"
+  branches:
+    only:
+      - main
   clean: true
   no_local: true
 sphinx:

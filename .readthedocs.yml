@@ -1,4 +1,8 @@
 version: 2
+defaults:
+  branch: main
+branches:
+  - main
 build:
   os: ubuntu-24.04
   tools:

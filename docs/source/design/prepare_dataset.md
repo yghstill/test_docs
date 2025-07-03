@@ -1,9 +1,9 @@
 # 如何准备数据
 
-本章节介绍AngleSlim中如何准备压缩所需数据，准备完成后将数据路径填入config文件`data_path`字段即可。
+本章节介绍AngelSlim中如何准备压缩所需数据，准备完成后将数据路径填入config文件`data_path`字段即可。
 
 ## 支持文件格式
-AngleSlim支持`jsonl`和`parquent`两种文件格式。
+AngelSlim支持`jsonl`和`parquent`两种文件格式。
 
 ### jsonl文件
 
@@ -41,8 +41,8 @@ jsonl格式为一行一条data，每行data为json格式。支持如下格式
 
 ### parquet文件
 
-支持parquet文件喂入AngleSlim
-需要parquet中的text列数据为下所示的开源sharegpt格式即可，AngleSlim会读取text列内容喂入tokenizer解码。
+支持parquet文件喂入AngelSlim
+需要parquet中的text列数据为下所示的开源sharegpt格式即可，AngelSlim会读取text列内容喂入tokenizer解码。
 ```
 [ { "from": "human", "value": "这本著作极其出色。请用同义词替换加粗的词语，构建一个新的句子。" }, { "from": "gpt", "value": "这部作品极为杰出。" } ]
 ```

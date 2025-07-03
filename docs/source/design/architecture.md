@@ -1,14 +1,14 @@
 # Architecture概述
 
 :::{image} /assets/architecture.png
-:alt: AngleSlim architecture
+:alt: AngelSlim architecture
 :::
 
 
 ## 设计思路
 
 ### 配置文件
-AngleSlim通过解析yaml配置文件来加载模型压缩要使用的相关配置项，包括模型信息、压缩算法信息和数据集相关信息。如下所示：
+AngelSlim通过解析yaml配置文件来加载模型压缩要使用的相关配置项，包括模型信息、压缩算法信息和数据集相关信息。如下所示：
 
 ```yaml
 model:
@@ -31,7 +31,7 @@ dataset:
 
 ### 数据Dataloader
 
-AngleSlim中定义了一个`DataLoaderFactory`，用于封装各个数据集，创建dataloader：
+AngelSlim中定义了一个`DataLoaderFactory`，用于封装各个数据集，创建dataloader：
 
 ```python
 dataloader = DataLoaderFactory.create_data_loader(
@@ -46,7 +46,7 @@ dataloader = DataLoaderFactory.create_data_loader(
         )
 ```
 
-那么如何准备能让`AngleSlim`直接加载的数据呢，详情请参考[准备数据文档](./prepare_dataset.md)
+那么如何准备能让`AngelSlim`直接加载的数据呢，详情请参考[准备数据文档](./prepare_dataset.md)
 
 ### 模型定义
 

@@ -1,4 +1,4 @@
-# AngleSlim documents
+# AngelSlim documents
 
 ## Build the docs
 

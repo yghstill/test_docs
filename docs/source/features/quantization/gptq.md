@@ -5,7 +5,7 @@
 本项目采用[GPTQ](https://arxiv.org/abs/2210.17323)算法实现Int4-weight-only量化，该算法逐层处理模型权重，利用少量校准数据最小化量化后的权重重构误差，通过近似Hessian逆矩阵的优化过程逐层调整权重。流程无需重新训练模型，仅需少量校准数据即可量化权重，提升推理效率并降低部署门槛。
 
 
-您可以量化`AngleSlim/configs`下面带有gptq字段的模型类型，你也可以直接下载我们量化完成的开源模型使用：#TODO [hflink]
+您可以量化`AngelSlim/configs`下面带有gptq字段的模型类型，你也可以直接下载我们量化完成的开源模型使用：#TODO [hflink]
 
 ## 配置
 
@@ -27,9 +27,9 @@ python3 tools/run.py -c configs/qwen2_5/int4_gptq/qwen2_5-7b_int4_gptq.yaml
 ```
 
 ## 部署
-要使用 vLLM 运行 GPTQ 模型，您可以修改`AngleSlim/deploy/run_vllm.sh`中的`MODEL_PATH`字段后通过以下命令使用：
+要使用 vLLM 运行 GPTQ 模型，您可以修改`AngelSlim/deploy/run_vllm.sh`中的`MODEL_PATH`字段后通过以下命令使用：
 
 ```shell
-cd AngleSlim/deploy
+cd AngelSlim/deploy
 sh run_vllm.sh
 ```

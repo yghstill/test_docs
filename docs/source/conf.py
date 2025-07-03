@@ -27,9 +27,9 @@ sys.path.append(os.path.abspath(REPO_ROOT))
 
 # -- Project information -----------------------------------------------------
 
-project = "AngleSlim"
-copyright = f"{datetime.datetime.now().year}, AngleSlim Team"
-author = "the AngleSlim Team"
+project = "AngelSlim"
+copyright = f"{datetime.datetime.now().year}, AngelSlim Team"
+author = "the AngelSlim Team"
 
 # -- General configuration ---------------------------------------------------
 
@@ -73,11 +73,11 @@ copybutton_prompt_is_regexp = True
 #
 html_title = project
 html_theme = "sphinx_book_theme"
-html_logo = "assets/logos/openSlim_logo_removebg.png"
-html_favicon = "assets/logos/openSlim_logo_removebg.png"
+html_logo = "assets/logos/angelslim_logo.png"
+html_favicon = "assets/logos/angelslim_icon.png"
 html_theme_options = {
     "path_to_docs": "docs/source",
-    "repository_url": "https://github.com/tencent/AngleSlim",
+    "repository_url": "https://github.com/tencent/AngelSlim",
     "use_repository_button": True,
     "use_edit_page_button": True,
     # Prevents the full API being added to the left sidebar of every page.
@@ -100,22 +100,22 @@ myst_url_schemes = {
     "mailto": None,
     "ftp": None,
     "gh-issue": {
-        "url": "https://github.com/tencent/AngleSlim/issues/{{path}}#{{fragment}}",
+        "url": "https://github.com/tencent/AngelSlim/issues/{{path}}#{{fragment}}",
         "title": "Issue #{{path}}",
         "classes": ["github"],
     },
     "gh-pr": {
-        "url": "https://github.com/tencent/AngleSlim/pull/{{path}}#{{fragment}}",
+        "url": "https://github.com/tencent/AngelSlim/pull/{{path}}#{{fragment}}",
         "title": "Pull Request #{{path}}",
         "classes": ["github"],
     },
     "gh-dir": {
-        "url": "https://github.com/tencent/AngleSlim/tree/main/{{path}}",
+        "url": "https://github.com/tencent/AngelSlim/tree/main/{{path}}",
         "title": "{{path}}",
         "classes": ["github"],
     },
     "gh-file": {
-        "url": "https://github.com/tencent/AngleSlim/blob/main/{{path}}",
+        "url": "https://github.com/tencent/AngelSlim/blob/main/{{path}}",
         "title": "{{path}}",
         "classes": ["github"],
     },
@@ -143,7 +143,7 @@ def get_repo_base_and_branch(pr_number):
     if _cached_base and _cached_branch:
         return _cached_base, _cached_branch
 
-    url = f"https://api.github.com/repos/tencent/AngleSlim/pulls/{pr_number}"
+    url = f"https://api.github.com/repos/tencent/AngelSlim/pulls/{pr_number}"
     response = requests.get(url)
     if response.status_code == 200:
         data = response.json()
@@ -193,7 +193,7 @@ def linkcode_resolve(domain, info):
         if base and branch:
             return f"https://github.com/{base}/blob/{branch}/{filename}#L{lineno}"
     # Otherwise, link to the source file on the main branch
-    return f"https://github.com/tencent/AngleSlim/blob/main/{filename}#L{lineno}"
+    return f"https://github.com/tencent/AngelSlim/blob/main/{filename}#L{lineno}"
 
 
 intersphinx_mapping = {

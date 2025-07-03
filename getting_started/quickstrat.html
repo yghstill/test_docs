@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>快速开始 &#8212; AngleSlim</title>
+    <title>快速开始 &#8212; AngelSlim</title>
   
   
   
@@ -57,10 +57,11 @@
     <script src="../_static/tabs.js?v=3030b3cb"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'getting_started/quickstrat';</script>
     <script src="../_static/custom.js"></script>
+    <link rel="icon" href="../_static/angelslim_icon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Installation" href="installation.html" />
-    <link rel="prev" title="Welcome to AngleSlim" href="../index.html" />
+    <link rel="next" title="安装教程" href="installation.html" />
+    <link rel="prev" title="Welcome to AngelSlim" href="../index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -147,8 +148,14 @@
   
   
   
+    
+    
+      
+    
+    
+    <img src="../_static/angelslim_logo.png" class="logo__image only-light" alt="AngelSlim - Home"/>
+    <script>document.write(`<img src="../_static/angelslim_logo.png" class="logo__image only-dark" alt="AngelSlim - Home"/>`);</script>
   
-    <p class="title logo__title">AngleSlim</p>
   
 </a></div>
         <div class="sidebar-primary-item">
@@ -167,12 +174,18 @@
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">入门指南</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">快速开始</a></li>
-<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">安装教程</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">算法特性</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../features/quantization/index.html">Quantization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../features/quantization/index.html">量化</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../features/speculative_decoding/index.html">投机采样</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">模型支持</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../models/hunyuan/hunyuan_quant.html">混元A13B模型量化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../models/deepseek/deepseek_quant.html">DeepSeek量化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../models/qwen/qwen_quant.html">Qwen量化</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">部署文档</span></p>
 <ul class="nav bd-sidenav">
@@ -180,7 +193,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">性能表现</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../performance/benchmarks.html">Benchmark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance/benchmarks.html">Benchmark表现</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">设计文档</span></p>
 <ul class="nav bd-sidenav">
@@ -239,7 +252,7 @@
       
       
       
-      <li><a href="https://github.com/tencent/AngleSlim" target="_blank"
+      <li><a href="https://github.com/tencent/AngelSlim" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -256,7 +269,7 @@
       
       
       
-      <li><a href="https://github.com/tencent/AngleSlim/edit/main/docs/source/getting_started/quickstrat.md" target="_blank"
+      <li><a href="https://github.com/tencent/AngelSlim/edit/main/docs/source/getting_started/quickstrat.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -401,8 +414,8 @@ document.write(`
 <h1>快速开始<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
 <section id="id2">
 <h2>环境准备<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
-<p>推荐使用pip直接安装最新版本的<code class="docutils literal notranslate"><span class="pre">AngleSlim</span></code>：</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>angleslim
+<p>推荐使用pip直接安装最新版本的<code class="docutils literal notranslate"><span class="pre">AngelSlim</span></code>：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>AngelSlim
 </pre></div>
 </div>
 <p>如果需要编译或者自定义安装，具体可参考<a class="reference internal" href="installation.html"><span class="std std-doc">安装文档</span></a></p>
@@ -426,9 +439,9 @@ document.write(`
 <p>如果Hugging Face模型下载地址访问不通，为了解决下载问题，建议您尝试从 ModelScope 进行模型下载。</p>
 </div>
 <ul class="simple">
-<li><p>如果想要获取AngleSlim中支持的压缩策略列表，可以执行下面代码：</p></li>
+<li><p>如果想要获取AngelSlim中支持的压缩策略列表，可以执行下面代码：</p></li>
 </ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">angleslim</span><span class="w"> </span><span class="kn">import</span> <span class="n">engine</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">angelSlim</span><span class="w"> </span><span class="kn">import</span> <span class="n">engine</span>
 <span class="n">engine</span><span class="o">.</span><span class="n">get_supported_compress_method</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -486,7 +499,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Welcome to AngleSlim</p>
+        <p class="prev-next-title">Welcome to AngelSlim</p>
       </div>
     </a>
     <a class="right-next"
@@ -494,7 +507,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Installation</p>
+        <p class="prev-next-title">安装教程</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -534,7 +547,7 @@ document.write(`
   <div class="footer-item">
     
 <p class="component-author">
-By the AngleSlim Team
+By the AngelSlim Team
 </p>
 
   </div>
@@ -544,7 +557,7 @@ By the AngleSlim Team
 
   <p class="copyright">
     
-      © Copyright 2025, AngleSlim Team.
+      © Copyright 2025, AngelSlim Team.
       <br/>
     
   </p>

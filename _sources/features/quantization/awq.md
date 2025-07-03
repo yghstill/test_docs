@@ -6,7 +6,7 @@
 
 
 
-您可以量化`AngleSlim/configs`下面带有awq字段的模型类型，你也可以直接下载我们量化完成的开源模型使用：#TODO [hflink]
+您可以量化`AngelSlim/configs`下面带有awq字段的模型类型，你也可以直接下载我们量化完成的开源模型使用：#TODO [hflink]
 
 ## 配置
 
@@ -30,9 +30,9 @@ python3 tools/run.py -c configs/qwen2_5/qwen2_5-7b_int4_awq.yaml
 ```
 
 ##部署
-要使用 vLLM 运行 AWQ 模型，您可以修改`AngleSlim/deploy/run_vllm.sh`中的`MODEL_PATH`字段后通过以下命令使用：
+要使用 vLLM 运行 AWQ 模型，您可以修改`AngelSlim/deploy/run_vllm.sh`中的`MODEL_PATH`字段后通过以下命令使用：
 
 ```shell
-cd AngleSlim/deploy
+cd AngelSlim/deploy
 sh run_vllm.sh
 ```

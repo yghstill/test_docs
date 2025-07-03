@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>FP8量化 &#8212; AngleSlim</title>
+    <title>FP8量化 &#8212; AngelSlim</title>
   
   
   
@@ -55,10 +55,11 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'features/quantization/fp8';</script>
     <script src="../../_static/custom.js"></script>
+    <link rel="icon" href="../../_static/angelslim_icon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="INT8量化" href="int8.html" />
-    <link rel="prev" title="GPTQ量化" href="gptq.html" />
+    <link rel="prev" title="量化" href="index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -145,8 +146,14 @@
   
   
   
+    
+    
+      
+    
+    
+    <img src="../../_static/angelslim_logo.png" class="logo__image only-light" alt="AngelSlim - Home"/>
+    <script>document.write(`<img src="../../_static/angelslim_logo.png" class="logo__image only-dark" alt="AngelSlim - Home"/>`);</script>
   
-    <p class="title logo__title">AngleSlim</p>
   
 </a></div>
         <div class="sidebar-primary-item">
@@ -165,19 +172,24 @@
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">入门指南</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../getting_started/quickstrat.html">快速开始</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../getting_started/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/installation.html">安装教程</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">算法特性</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Quantization</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="awq.html">AWQ量化</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gptq.html">GPTQ量化</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">量化</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">FP8量化</a></li>
 <li class="toctree-l2"><a class="reference internal" href="int8.html">INT8量化</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hunyuan.html">混元A13B模型量化</a></li>
+<li class="toctree-l2"><a class="reference internal" href="awq.html">AWQ量化</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gptq.html">GPTQ量化</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../speculative_decoding/index.html">投机采样</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">模型支持</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../models/hunyuan/hunyuan_quant.html">混元A13B模型量化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../models/deepseek/deepseek_quant.html">DeepSeek量化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../models/qwen/qwen_quant.html">Qwen量化</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">部署文档</span></p>
 <ul class="nav bd-sidenav">
@@ -185,7 +197,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">性能表现</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../performance/benchmarks.html">Benchmark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../performance/benchmarks.html">Benchmark表现</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">设计文档</span></p>
 <ul class="nav bd-sidenav">
@@ -244,7 +256,7 @@
       
       
       
-      <li><a href="https://github.com/tencent/AngleSlim" target="_blank"
+      <li><a href="https://github.com/tencent/AngelSlim" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -261,7 +273,7 @@
       
       
       
-      <li><a href="https://github.com/tencent/AngleSlim/edit/main/docs/source/features/quantization/fp8.md" target="_blank"
+      <li><a href="https://github.com/tencent/AngelSlim/edit/main/docs/source/features/quantization/fp8.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -387,7 +399,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#w8a8-fp8-dynamic">W8A8-FP8 Dynamic量化</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#w8a8-fp8-static">W8A8-FP8 Static量化</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">产出模型</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fp8-low-memory">FP8 low_memory量化</a></li>
 </ul>
             </nav>
         </div>
@@ -456,10 +468,10 @@ document.write(`
 <li><p><code class="docutils literal notranslate"><span class="pre">batch_size</span></code>：校准批量大小。</p></li>
 </ul>
 <p>支持数据格式详见<a class="reference internal" href="#../design/prepare_dataset.md"><span class="xref myst">数据准备文档</span></a>。</p>
-</section>
-<section id="id2">
-<h2>产出模型<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
-<p>配置文件<code class="docutils literal notranslate"><span class="pre">config.json</span></code>：</p>
+<ul class="simple">
+<li><p>产出模型</p></li>
+</ul>
+<p>在HuggingFace配置文件<code class="docutils literal notranslate"><span class="pre">config.json</span></code>：</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;quantization_config&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;activation_scheme&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;dynamic&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;ignored_layers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;lm_head&quot;</span><span class="p">],</span>
@@ -468,6 +480,31 @@ document.write(`
 </pre></div>
 </div>
 <p>可参阅<a class="reference external" href="https://docs.vllm.ai/en/stable/features/quantization/fp8.html">vLLM FP8文档</a>加载FP8量化模型配置要求。</p>
+</section>
+<section id="fp8-low-memory">
+<h2>FP8 low_memory量化<a class="headerlink" href="#fp8-low-memory" title="Link to this heading">#</a></h2>
+<p>标准FP8在量化较大模型时显存占用较高，可以采用low_memory模式FP8校准模型。</p>
+<p>标准FP8静态量化<code class="docutils literal notranslate"><span class="pre">Qwen3-a22b</span></code>、<code class="docutils literal notranslate"><span class="pre">max_seq_len=4096</span></code>时需要占用约455GB显存，8卡H20; 采用low_memory时只需要22GB显存，单卡H20即可实现量化。</p>
+<p>运行示例如下：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>tools/run.py<span class="w"> </span>-c<span class="w"> </span>configs/qwen3/fp8_static/qwen3-a22b_fp8_static_low_memroy.yaml
+</pre></div>
+</div>
+<p>Low_memory激活静态量化需要指定开启，该配置文件中，压缩算法<code class="docutils literal notranslate"><span class="pre">quantization</span></code>填入<code class="docutils literal notranslate"><span class="pre">low_memory:</span> <span class="pre">True</span></code>，其余量化配置与fp8静态量化相同。</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compression configuration</span>
+<span class="nt">compression</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PTQ</span>
+<span class="w">  </span><span class="nt">quantization</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fp8_static</span>
+<span class="w">    </span><span class="nt">bits</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8</span>
+<span class="w">    </span><span class="nt">low_memory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w">  </span><span class="c1"># Use less gpu/cpu memory</span>
+<span class="w">    </span><span class="nt">quant_method</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">weight</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;per-tensor&quot;</span>
+<span class="w">      </span><span class="nt">activation</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;per-tensor&quot;</span>
+<span class="w">    </span><span class="nt">ignore_layers</span><span class="p">:</span><span class="w">         </span><span class="c1"># Skip quantization for these layers</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;lm_head&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;model.embed_tokens&quot;</span>
+</pre></div>
+</div>
 </section>
 </section>
 
@@ -483,12 +520,12 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="gptq.html"
+       href="index.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">GPTQ量化</p>
+        <p class="prev-next-title">量化</p>
       </div>
     </a>
     <a class="right-next"
@@ -518,7 +555,7 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#w8a8-fp8-dynamic">W8A8-FP8 Dynamic量化</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#w8a8-fp8-static">W8A8-FP8 Static量化</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">产出模型</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fp8-low-memory">FP8 low_memory量化</a></li>
 </ul>
   </nav></div>
 
@@ -533,7 +570,7 @@ document.write(`
   <div class="footer-item">
     
 <p class="component-author">
-By the AngleSlim Team
+By the AngelSlim Team
 </p>
 
   </div>
@@ -543,7 +580,7 @@ By the AngleSlim Team
 
   <p class="copyright">
     
-      © Copyright 2025, AngleSlim Team.
+      © Copyright 2025, AngelSlim Team.
       <br/>
     
   </p>

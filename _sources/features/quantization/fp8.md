@@ -67,9 +67,9 @@ dataset:
 支持数据格式详见[数据准备文档](../design/prepare_dataset.md)。
 
 
-## 产出模型
+- 产出模型
 
-配置文件`config.json`：
+在HuggingFace配置文件`config.json`：
 
 ```json
 "quantization_config": {
@@ -80,3 +80,35 @@ dataset:
 ```
 
 可参阅[vLLM FP8文档](https://docs.vllm.ai/en/stable/features/quantization/fp8.html)加载FP8量化模型配置要求。
+
+## FP8 low_memory量化
+
+标准FP8在量化较大模型时显存占用较高，可以采用low_memory模式FP8校准模型。
+
+标准FP8静态量化`Qwen3-a22b`、`max_seq_len=4096`时需要占用约455GB显存，8卡H20; 采用low_memory时只需要22GB显存，单卡H20即可实现量化。
+
+
+运行示例如下：
+
+```shell
+python3 tools/run.py -c configs/qwen3/fp8_static/qwen3-a22b_fp8_static_low_memroy.yaml
+```
+
+Low_memory激活静态量化需要指定开启，该配置文件中，压缩算法`quantization`填入`low_memory: True`，其余量化配置与fp8静态量化相同。
+
+
+```yaml
+# Compression configuration
+compression:
+  name: PTQ
+  quantization:
+    name: fp8_static
+    bits: 8
+    low_memory: True  # Use less gpu/cpu memory
+    quant_method:
+      weight: "per-tensor"
+      activation: "per-tensor"
+    ignore_layers:         # Skip quantization for these layers
+      - "lm_head"
+      - "model.embed_tokens"
+```

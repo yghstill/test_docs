@@ -1,6 +1,6 @@
 # 如何准备config
 
-AngleSlim中运行模型压缩均采用解析yaml文件的
+AngelSlim中运行模型压缩均采用解析yaml文件的
 
 ```yaml
 # 全局配置

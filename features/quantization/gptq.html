@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>GPTQ量化 &#8212; AngleSlim</title>
+    <title>GPTQ量化 &#8212; AngelSlim</title>
   
   
   
@@ -55,9 +55,10 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'features/quantization/gptq';</script>
     <script src="../../_static/custom.js"></script>
+    <link rel="icon" href="../../_static/angelslim_icon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="FP8量化" href="fp8.html" />
+    <link rel="next" title="投机采样" href="../speculative_decoding/index.html" />
     <link rel="prev" title="AWQ量化" href="awq.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -145,8 +146,14 @@
   
   
   
+    
+    
+      
+    
+    
+    <img src="../../_static/angelslim_logo.png" class="logo__image only-light" alt="AngelSlim - Home"/>
+    <script>document.write(`<img src="../../_static/angelslim_logo.png" class="logo__image only-dark" alt="AngelSlim - Home"/>`);</script>
   
-    <p class="title logo__title">AngleSlim</p>
   
 </a></div>
         <div class="sidebar-primary-item">
@@ -165,19 +172,24 @@
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">入门指南</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../getting_started/quickstrat.html">快速开始</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../getting_started/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/installation.html">安装教程</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">算法特性</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Quantization</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="awq.html">AWQ量化</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">GPTQ量化</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">量化</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="fp8.html">FP8量化</a></li>
 <li class="toctree-l2"><a class="reference internal" href="int8.html">INT8量化</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hunyuan.html">混元A13B模型量化</a></li>
+<li class="toctree-l2"><a class="reference internal" href="awq.html">AWQ量化</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">GPTQ量化</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../speculative_decoding/index.html">投机采样</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">模型支持</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../models/hunyuan/hunyuan_quant.html">混元A13B模型量化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../models/deepseek/deepseek_quant.html">DeepSeek量化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../models/qwen/qwen_quant.html">Qwen量化</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">部署文档</span></p>
 <ul class="nav bd-sidenav">
@@ -185,7 +197,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">性能表现</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../performance/benchmarks.html">Benchmark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../performance/benchmarks.html">Benchmark表现</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">设计文档</span></p>
 <ul class="nav bd-sidenav">
@@ -244,7 +256,7 @@
       
       
       
-      <li><a href="https://github.com/tencent/AngleSlim" target="_blank"
+      <li><a href="https://github.com/tencent/AngelSlim" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -261,7 +273,7 @@
       
       
       
-      <li><a href="https://github.com/tencent/AngleSlim/edit/main/docs/source/features/quantization/gptq.md" target="_blank"
+      <li><a href="https://github.com/tencent/AngelSlim/edit/main/docs/source/features/quantization/gptq.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -402,7 +414,7 @@ document.write(`
   <section id="gptq">
 <span id="id1"></span><h1>GPTQ量化<a class="headerlink" href="#gptq" title="Link to this heading">#</a></h1>
 <p>本项目采用<a class="reference external" href="https://arxiv.org/abs/2210.17323">GPTQ</a>算法实现Int4-weight-only量化，该算法逐层处理模型权重，利用少量校准数据最小化量化后的权重重构误差，通过近似Hessian逆矩阵的优化过程逐层调整权重。流程无需重新训练模型，仅需少量校准数据即可量化权重，提升推理效率并降低部署门槛。</p>
-<p>您可以量化<code class="docutils literal notranslate"><span class="pre">AngleSlim/configs</span></code>下面带有gptq字段的模型类型，你也可以直接下载我们量化完成的开源模型使用：#TODO [hflink]</p>
+<p>您可以量化<code class="docutils literal notranslate"><span class="pre">AngelSlim/configs</span></code>下面带有gptq字段的模型类型，你也可以直接下载我们量化完成的开源模型使用：#TODO [hflink]</p>
 <section id="id2">
 <h2>配置<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <p>GPTQ <code class="docutils literal notranslate"><span class="pre">confg.yaml</span></code>文件参数配置，您可以参考<code class="docutils literal notranslate"><span class="pre">config/model/int4_gptq</span></code>路径下的文件，下面是参数信息介绍。</p>
@@ -424,8 +436,8 @@ document.write(`
 </section>
 <section id="id3">
 <h2>部署<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
-<p>要使用 vLLM 运行 GPTQ 模型，您可以修改<code class="docutils literal notranslate"><span class="pre">AngleSlim/deploy/run_vllm.sh</span></code>中的<code class="docutils literal notranslate"><span class="pre">MODEL_PATH</span></code>字段后通过以下命令使用：</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>AngleSlim/deploy
+<p>要使用 vLLM 运行 GPTQ 模型，您可以修改<code class="docutils literal notranslate"><span class="pre">AngelSlim/deploy/run_vllm.sh</span></code>中的<code class="docutils literal notranslate"><span class="pre">MODEL_PATH</span></code>字段后通过以下命令使用：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>AngelSlim/deploy
 sh<span class="w"> </span>run_vllm.sh
 </pre></div>
 </div>
@@ -453,11 +465,11 @@ sh<span class="w"> </span>run_vllm.sh
       </div>
     </a>
     <a class="right-next"
-       href="fp8.html"
+       href="../speculative_decoding/index.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">FP8量化</p>
+        <p class="prev-next-title">投机采样</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -494,7 +506,7 @@ sh<span class="w"> </span>run_vllm.sh
   <div class="footer-item">
     
 <p class="component-author">
-By the AngleSlim Team
+By the AngelSlim Team
 </p>
 
   </div>
@@ -504,7 +516,7 @@ By the AngleSlim Team
 
   <p class="copyright">
     
-      © Copyright 2025, AngleSlim Team.
+      © Copyright 2025, AngelSlim Team.
       <br/>
     
   </p>

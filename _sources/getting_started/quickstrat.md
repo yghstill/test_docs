@@ -2,9 +2,9 @@
 
 ## 环境准备
 
-推荐使用pip直接安装最新版本的`AngleSlim`：
+推荐使用pip直接安装最新版本的`AngelSlim`：
 ```shell
-pip install angleslim
+pip install AngelSlim
 ```
 
 如果需要编译或者自定义安装，具体可参考[安装文档](./installation.md)
@@ -32,10 +32,10 @@ pip install angleslim
 如果Hugging Face模型下载地址访问不通，为了解决下载问题，建议您尝试从 ModelScope 进行模型下载。
 :::
 
-- 如果想要获取AngleSlim中支持的压缩策略列表，可以执行下面代码：
+- 如果想要获取AngelSlim中支持的压缩策略列表，可以执行下面代码：
 
 ```python
-from angleslim import engine
+from angelSlim import engine
 engine.get_supported_compress_method()
 ```
 

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Benchmark &#8212; AngleSlim</title>
+    <title>Benchmark表现 &#8212; AngelSlim</title>
   
   
   
@@ -55,6 +55,7 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'performance/benchmarks';</script>
     <script src="../_static/custom.js"></script>
+    <link rel="icon" href="../_static/angelslim_icon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="设计文档" href="../design/index.html" />
@@ -145,8 +146,14 @@
   
   
   
+    
+    
+      
+    
+    
+    <img src="../_static/angelslim_logo.png" class="logo__image only-light" alt="AngelSlim - Home"/>
+    <script>document.write(`<img src="../_static/angelslim_logo.png" class="logo__image only-dark" alt="AngelSlim - Home"/>`);</script>
   
-    <p class="title logo__title">AngleSlim</p>
   
 </a></div>
         <div class="sidebar-primary-item">
@@ -165,12 +172,18 @@
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">入门指南</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/quickstrat.html">快速开始</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../getting_started/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/installation.html">安装教程</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">算法特性</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../features/quantization/index.html">Quantization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../features/quantization/index.html">量化</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../features/speculative_decoding/index.html">投机采样</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">模型支持</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../models/hunyuan/hunyuan_quant.html">混元A13B模型量化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../models/deepseek/deepseek_quant.html">DeepSeek量化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../models/qwen/qwen_quant.html">Qwen量化</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">部署文档</span></p>
 <ul class="nav bd-sidenav">
@@ -178,7 +191,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">性能表现</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Benchmark</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Benchmark表现</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">设计文档</span></p>
 <ul class="nav bd-sidenav">
@@ -237,7 +250,7 @@
       
       
       
-      <li><a href="https://github.com/tencent/AngleSlim" target="_blank"
+      <li><a href="https://github.com/tencent/AngelSlim" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -254,7 +267,7 @@
       
       
       
-      <li><a href="https://github.com/tencent/AngleSlim/edit/main/docs/source/performance/benchmarks.md" target="_blank"
+      <li><a href="https://github.com/tencent/AngelSlim/edit/main/docs/source/performance/benchmarks.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -368,7 +381,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Benchmark</h1>
+    <h1>Benchmark表现</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -400,7 +413,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section id="benchmark">
-<span id="benchmarks"></span><h1>Benchmark<a class="headerlink" href="#benchmark" title="Link to this heading">#</a></h1>
+<span id="benchmarks"></span><h1>Benchmark表现<a class="headerlink" href="#benchmark" title="Link to this heading">#</a></h1>
 <section id="fp8benchmark">
 <h2>FP8量化benchmark<a class="headerlink" href="#fp8benchmark" title="Link to this heading">#</a></h2>
 <section id="hunyuan-a13b">
@@ -490,7 +503,7 @@ document.write(`
   <div class="footer-item">
     
 <p class="component-author">
-By the AngleSlim Team
+By the AngelSlim Team
 </p>
 
   </div>
@@ -500,7 +513,7 @@ By the AngleSlim Team
 
   <p class="copyright">
     
-      © Copyright 2025, AngleSlim Team.
+      © Copyright 2025, AngelSlim Team.
       <br/>
     
   </p>

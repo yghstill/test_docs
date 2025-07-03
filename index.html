@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Welcome to AngleSlim &#8212; AngleSlim</title>
+    <title>Welcome to AngelSlim &#8212; AngelSlim</title>
   
   
   
@@ -55,6 +55,7 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'index';</script>
     <script src="_static/custom.js"></script>
+    <link rel="icon" href="_static/angelslim_icon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="快速开始" href="getting_started/quickstrat.html" />
@@ -146,8 +147,14 @@
   
   
   
+    
+    
+      
+    
+    
+    <img src="_static/angelslim_logo.png" class="logo__image only-light" alt="AngelSlim - Home"/>
+    <script>document.write(`<img src="_static/angelslim_logo.png" class="logo__image only-dark" alt="AngelSlim - Home"/>`);</script>
   
-    <p class="title logo__title">AngleSlim</p>
   
 </a></div>
         <div class="sidebar-primary-item">
@@ -166,12 +173,18 @@
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">入门指南</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="getting_started/quickstrat.html">快速开始</a></li>
-<li class="toctree-l1"><a class="reference internal" href="getting_started/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started/installation.html">安装教程</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">算法特性</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="features/quantization/index.html">Quantization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="features/quantization/index.html">量化</a></li>
 <li class="toctree-l1"><a class="reference internal" href="features/speculative_decoding/index.html">投机采样</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">模型支持</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="models/hunyuan/hunyuan_quant.html">混元A13B模型量化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="models/deepseek/deepseek_quant.html">DeepSeek量化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="models/qwen/qwen_quant.html">Qwen量化</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">部署文档</span></p>
 <ul class="nav bd-sidenav">
@@ -179,7 +192,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">性能表现</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="performance/benchmarks.html">Benchmark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="performance/benchmarks.html">Benchmark表现</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">设计文档</span></p>
 <ul class="nav bd-sidenav">
@@ -238,7 +251,7 @@
       
       
       
-      <li><a href="https://github.com/tencent/AngleSlim" target="_blank"
+      <li><a href="https://github.com/tencent/AngelSlim" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -255,7 +268,7 @@
       
       
       
-      <li><a href="https://github.com/tencent/AngleSlim/edit/main/docs/source/index.md" target="_blank"
+      <li><a href="https://github.com/tencent/AngelSlim/edit/main/docs/source/index.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -369,7 +382,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Welcome to AngleSlim</h1>
+    <h1>Welcome to AngelSlim</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -394,10 +407,10 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="welcome-to-angleslim">
-<h1>Welcome to AngleSlim<a class="headerlink" href="#welcome-to-angleslim" title="Link to this heading">#</a></h1>
+  <section id="welcome-to-angelslim">
+<h1>Welcome to AngelSlim<a class="headerlink" href="#welcome-to-angelslim" title="Link to this heading">#</a></h1>
 <figure class="align-center">
-<img alt="AngleSlim" class="no-scaled-link" src="_images/openslim_logo_removebg.png" style="width: 60%;" />
+<img alt="AngelSlim" class="no-scaled-link" src="_images/angelslim_logo.png" style="width: 60%;" />
 </figure>
 <p style="text-align:center">
 <strong>Efficient LLM Compression Toolkit
@@ -406,11 +419,12 @@ document.write(`
 
 <p style="text-align:center">
 <script async defer src="https://buttons.github.io/buttons.js"></script>
-<a class="github-button" href="https://github.com/tencent/AngleSlim" data-show-count="true" data-size="large" aria-label="Star">Star</a>
-<a class="github-button" href="https://github.com/tencent/AngleSlim/subscription" data-icon="octicon-eye" data-size="large" aria-label="Watch">Watch</a>
-<a class="github-button" href="https://github.com/tencent/AngleSlim/fork" data-icon="octicon-repo-forked" data-size="large" aria-label="Fork">Fork</a>
-</p><p>AngleSlim是腾讯自研的，致力于打造更易用、更全面和更高效的大模型压缩工具包。本工具致力于集成并开源量化、投机采样、稀疏化和蒸馏等压缩算法，模型从小到大全覆盖，包括服务端模型、端侧模型的压缩实践。并且端到端打通从压缩到部署的全流程，帮助开发者和AI爱好者顺畅走完大模型压缩部署最后一公里。</p>
-<p>AngleSlim主要特性有：</p>
+<a class="github-button" href="https://github.com/tencent/AngelSlim" data-show-count="true" data-size="large" aria-label="Star">Star</a>
+<a class="github-button" href="https://github.com/tencent/AngelSlim/subscription" data-icon="octicon-eye" data-size="large" aria-label="Watch">Watch</a>
+<a class="github-button" href="https://github.com/tencent/AngelSlim/fork" data-icon="octicon-repo-forked" data-size="large" aria-label="Fork">Fork</a>
+</p><p>AngelSlim是腾讯自研的，致力于打造更易用、更全面和更高效的大语言模型压缩工具包。我们将开源量化、投机采样、稀疏化和蒸馏等压缩算法。覆盖主流最前沿的大模型，并且端到端打通从压缩到部署的全流程。</p>
+<p>(AngelSlim, developed by Tencent, is a large language model compression toolkit engineered for enhanced usability, comprehensiveness, and efficiency. We will open-source compression algorithms including quantization, speculative decoding, pruning, and distillation. Supporting cutting-edge mainstream LLMs, the toolkit streamlines the complete end-to-end workflow from compression to deployment.)</p>
+<p>AngelSlim主要特性有：</p>
 <ul class="simple">
 <li><p><strong>高度集成化</strong>：本工具将主流的压缩算法集成到工具，开发者可一键式调用，具有很好的易用性。</p></li>
 <li><p><strong>持续算法创新</strong>：本工具除了集成工业界使用最广的算法，还持续自研更好的压缩算法，并且会陆续开源。</p></li>
@@ -427,14 +441,22 @@ document.write(`
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">入门指南</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="getting_started/quickstrat.html">快速开始</a></li>
-<li class="toctree-l1"><a class="reference internal" href="getting_started/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started/installation.html">安装教程</a></li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">算法特性</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="features/quantization/index.html">Quantization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="features/quantization/index.html">量化</a></li>
 <li class="toctree-l1"><a class="reference internal" href="features/speculative_decoding/index.html">投机采样</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">模型支持</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="models/hunyuan/hunyuan_quant.html">混元A13B模型量化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="models/deepseek/deepseek_quant.html">DeepSeek量化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="models/qwen/qwen_quant.html">Qwen量化</a></li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
@@ -446,7 +468,7 @@ document.write(`
 <div class="toctree-wrapper compound">
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">性能表现</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="performance/benchmarks.html">Benchmark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="performance/benchmarks.html">Benchmark表现</a></li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
@@ -458,9 +480,9 @@ document.write(`
 </section>
 <section id="id2">
 <h2>更多<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
-<p>想了解更多信息，可以给我们在<a class="reference external" href="https://github.com/tencent/AngleSlim/issues">GitHub Issues</a>上留言，也可以加入我们的【微信交流群】讨论更多的技术问题。</p>
+<p>想了解更多信息，可以给我们在<a class="reference external" href="https://github.com/tencent/AngelSlim/issues">GitHub Issues</a>上留言，也可以加入我们的【微信交流群】讨论更多的技术问题。</p>
 <figure class="align-center">
-<img alt="wechat" class="no-scaled-link" src="_images/openslim_logo_removebg.png" style="width: 50%;" />
+<img alt="wechat" class="no-scaled-link" src="assets/logos/openslim_logo_removebg.png" style="width: 50%;" />
 </figure>
 </section>
 </section>
@@ -519,7 +541,7 @@ document.write(`
   <div class="footer-item">
     
 <p class="component-author">
-By the AngleSlim Team
+By the AngelSlim Team
 </p>
 
   </div>
@@ -529,7 +551,7 @@ By the AngleSlim Team
 
   <p class="copyright">
     
-      © Copyright 2025, AngleSlim Team.
+      © Copyright 2025, AngelSlim Team.
       <br/>
     
   </p>

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>如何新增或修改模型 &amp; 压缩算法 &#8212; AngleSlim</title>
+    <title>如何新增或修改模型 &amp; 压缩算法 &#8212; AngelSlim</title>
   
   
   
@@ -33,7 +33,6 @@
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=a5c4661c" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -54,9 +53,9 @@
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/tabs.js?v=3030b3cb"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'design/update_algorithm';</script>
     <script src="../_static/custom.js"></script>
+    <link rel="icon" href="../_static/angelslim_icon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="prev" title="如何准备数据" href="prepare_dataset.html" />
@@ -146,8 +145,14 @@
   
   
   
+    
+    
+      
+    
+    
+    <img src="../_static/angelslim_logo.png" class="logo__image only-light" alt="AngelSlim - Home"/>
+    <script>document.write(`<img src="../_static/angelslim_logo.png" class="logo__image only-dark" alt="AngelSlim - Home"/>`);</script>
   
-    <p class="title logo__title">AngleSlim</p>
   
 </a></div>
         <div class="sidebar-primary-item">
@@ -166,12 +171,18 @@
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">入门指南</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/quickstrat.html">快速开始</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../getting_started/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/installation.html">安装教程</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">算法特性</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../features/quantization/index.html">Quantization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../features/quantization/index.html">量化</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../features/speculative_decoding/index.html">投机采样</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">模型支持</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../models/hunyuan/hunyuan_quant.html">混元A13B模型量化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../models/deepseek/deepseek_quant.html">DeepSeek量化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../models/qwen/qwen_quant.html">Qwen量化</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">部署文档</span></p>
 <ul class="nav bd-sidenav">
@@ -179,7 +190,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">性能表现</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../performance/benchmarks.html">Benchmark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance/benchmarks.html">Benchmark表现</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">设计文档</span></p>
 <ul class="current nav bd-sidenav">
@@ -244,7 +255,7 @@
       
       
       
-      <li><a href="https://github.com/tencent/AngleSlim" target="_blank"
+      <li><a href="https://github.com/tencent/AngelSlim" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -261,7 +272,7 @@
       
       
       
-      <li><a href="https://github.com/tencent/AngleSlim/edit/main/docs/source/design/update_algorithm.md" target="_blank"
+      <li><a href="https://github.com/tencent/AngelSlim/edit/main/docs/source/design/update_algorithm.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -386,6 +397,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">新增模型</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">新增压缩算法</a></li>
 </ul>
             </nav>
         </div>
@@ -399,11 +411,44 @@ document.write(`
                   
   <section id="id1">
 <h1>如何新增或修改模型 &amp; 压缩算法<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
-<p>量化目前支持FP8、INT8、INT4、</p>
-<div class="sphinx-tabs docutils container">
-<div aria-label="Tabbed content" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">Python</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"></div></div>
 <section id="id2">
 <h2>新增模型<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>以Qwen为例，所有新定义的模型继承自<code class="docutils literal notranslate"><span class="pre">BaseModel</span></code>，然后使用<code class="docutils literal notranslate"><span class="pre">&#64;SlimModelFactory.register</span></code>来进行注册即可。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@SlimModelFactory</span><span class="o">.</span><span class="n">register</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Qwen</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">model</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">model_path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">deploy_backend</span><span class="o">=</span><span class="s2">&quot;vllm&quot;</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="p">,</span>
+            <span class="n">model_path</span><span class="o">=</span><span class="n">model_path</span><span class="p">,</span>
+            <span class="n">deploy_backend</span><span class="o">=</span><span class="n">deploy_backend</span><span class="p">,</span>
+        <span class="p">)</span>
+</pre></div>
+</div>
+<p>在<code class="docutils literal notranslate"><span class="pre">SlimModelFactory</span></code>中会自动创建模型全局列表，调用时直接指定模型的class名字即可，比如：<code class="docutils literal notranslate"><span class="pre">Qwen</span></code>。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">slim_model</span> <span class="o">=</span> <span class="n">SlimModelFactory</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+   <span class="s2">&quot;Qwen&quot;</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">,</span> <span class="n">deploy_backend</span><span class="o">=</span><span class="n">deploy_backend</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="id3">
+<h2>新增压缩算法<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<p>量化目前支持FP8、INT8、INT4等策略，压缩通过<code class="docutils literal notranslate"><span class="pre">CompressorFactory</span></code>来统一注册压缩算法</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">slim_config</span> <span class="o">=</span> <span class="p">{</span>
+   <span class="s2">&quot;global_config&quot;</span><span class="p">:</span> <span class="n">global_config</span><span class="p">,</span>
+   <span class="s2">&quot;compress_config&quot;</span><span class="p">:</span> <span class="n">compress_config</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">compressor</span> <span class="o">=</span> <span class="n">CompressorFactory</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+   <span class="s2">&quot;PTQ&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">slim_model</span><span class="p">,</span> <span class="n">slim_config</span><span class="o">=</span><span class="n">slim_config</span>
+<span class="p">)</span>
+
+</pre></div>
+</div>
 </section>
 </section>
 
@@ -444,6 +489,7 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">新增模型</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">新增压缩算法</a></li>
 </ul>
   </nav></div>
 
@@ -458,7 +504,7 @@ document.write(`
   <div class="footer-item">
     
 <p class="component-author">
-By the AngleSlim Team
+By the AngelSlim Team
 </p>
 
   </div>
@@ -468,7 +514,7 @@ By the AngleSlim Team
 
   <p class="copyright">
     
-      © Copyright 2025, AngleSlim Team.
+      © Copyright 2025, AngelSlim Team.
       <br/>
     
   </p>

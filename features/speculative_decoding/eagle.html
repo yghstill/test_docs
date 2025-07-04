@@ -171,8 +171,8 @@
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">入门指南</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../getting_started/quickstrat.html">快速开始</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../getting_started/installation.html">安装教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/quickstrat.html">快速开始</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">算法特性</span></p>
 <ul class="current nav bd-sidenav">
@@ -190,11 +190,12 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">部署文档</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../deployment/deploy.html">部署压缩模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../deployment/deploy.html">压缩模型部署</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">性能表现</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../performance/benchmarks.html">Benchmark表现</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../performance/quantization/benchmarks.html">量化benchmark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../performance/speculative_decoding/benchmarks.html">投机采样Benchmark</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">设计文档</span></p>
 <ul class="nav bd-sidenav">
@@ -253,7 +254,7 @@
       
       
       
-      <li><a href="https://github.com/tencent/AngelSlim" target="_blank"
+      <li><a href="https://github.com/Tencent/AngelSlim" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -270,7 +271,7 @@
       
       
       
-      <li><a href="https://github.com/tencent/AngelSlim/edit/main/docs/source/features/speculative_decoding/eagle.md" target="_blank"
+      <li><a href="https://github.com/Tencent/AngelSlim/edit/main/docs/source/features/speculative_decoding/eagle.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -394,9 +395,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">算法介绍</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">快速测试</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">训练及创新</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">快速测试</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">训练及创新</a></li>
 </ul>
             </nav>
         </div>
@@ -410,14 +410,36 @@ document.write(`
                   
   <section id="eagle">
 <h1>EAGLE<a class="headerlink" href="#eagle" title="Link to this heading">#</a></h1>
+<p>本项目将集成包括但不限于<a class="reference external" href="https://arxiv.org/pdf/2503.01840">Eagle</a>系列的投机采样算法。
+我们计划将对投机采样算法的代码以及部分开源大模型的Eagle3权重开源。
+作为第一批开源内容，我们将提供Qwen3系列的<a class="reference external" href="https://huggingface.co/AngelSlim">Eagle3权重</a>。后续，更多的代码和其他大模型的权重也将陆续开源，敬请关注。
+我们训练的Qwen3系列Eagle3模型的表现可以参见基准测试（<a class="reference internal" href="../../performance/speculative_decoding/benchmarks.html"><span class="std std-doc">benchmarks</span></a>）。</p>
 <section id="id1">
-<h2>算法介绍<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<h2>快速测试<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>你可以选择使用vllm作为推理后端快速验证Eagle3模型的加速效果。
+在已经安装vllm的环境中使用以下命令可以快速启动一个兼容Openai的服务，然后即可以通过本地端口进行请求了。</p>
+<ul>
+<li><p>启动兼容OpenAI格式的API服务</p>
+<p>以下指令将启动兼容OpenAI API格式的服务，默认在 http://0.0.0.0:8080 地址进行访问：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>vllm.entrypoints.openai.api_server<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--port<span class="w"> </span><span class="m">8000</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--model<span class="w"> </span><span class="si">${</span><span class="nv">TARGET_MODEL_PATH_OR_NAME</span><span class="si">}</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--seed<span class="w"> </span><span class="m">42</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--gpu_memory_utilization<span class="w"> </span><span class="m">0</span>.8<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--speculative_config<span class="w"> </span><span class="s1">&#39;{&quot;method&quot;:&quot;eagle3&quot;, &quot;model&quot;: &quot;${EAGLE3_MODEL_PATH}&quot;, &quot;draft_tensor_parallel_size&quot;: 1, &quot;num_speculative_tokens&quot;: 4}&#39;</span>
+</pre></div>
+</div>
+<p>其中:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">TARGET_MODEL_PATH_OR_NAME</span></code>为本地路径或模型在huggingface上的名字;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">EAGLE3_MODEL_PATH</span></code>为Eagle3模型路径或在huggingface上的名字;</p></li>
+</ul>
+</li>
+</ul>
 </section>
 <section id="id2">
-<h2>快速测试<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
-</section>
-<section id="id3">
-<h2>训练及创新<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<h2>训练及创新<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <p>Comming soon.</p>
 </section>
 </section>
@@ -467,9 +489,8 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">算法介绍</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">快速测试</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">训练及创新</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">快速测试</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">训练及创新</a></li>
 </ul>
   </nav></div>
 

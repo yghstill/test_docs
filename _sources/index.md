@@ -1,5 +1,3 @@
-# Welcome to AngelSlim
-
 :::{figure} ./assets/logos/angelslim_logo.png
 :align: center
 :alt: AngelSlim
@@ -15,9 +13,9 @@
 
 <p style="text-align:center">
 <script async defer src="https://buttons.github.io/buttons.js"></script>
-<a class="github-button" href="https://github.com/tencent/AngelSlim" data-show-count="true" data-size="large" aria-label="Star">Star</a>
-<a class="github-button" href="https://github.com/tencent/AngelSlim/subscription" data-icon="octicon-eye" data-size="large" aria-label="Watch">Watch</a>
-<a class="github-button" href="https://github.com/tencent/AngelSlim/fork" data-icon="octicon-repo-forked" data-size="large" aria-label="Fork">Fork</a>
+<a class="github-button" href="https://github.com/Tencent/AngelSlim" data-show-count="true" data-size="large" aria-label="Star">Star</a>
+<a class="github-button" href="https://github.com/Tencent/AngelSlim/subscription" data-icon="octicon-eye" data-size="large" aria-label="Watch">Watch</a>
+<a class="github-button" href="https://github.com/Tencent/AngelSlim/fork" data-icon="octicon-repo-forked" data-size="large" aria-label="Fork">Fork</a>
 </p>
 :::
 
@@ -26,7 +24,7 @@ AngelSlim是腾讯自研的，致力于打造更易用、更全面和更高效�
 (AngelSlim, developed by Tencent, is a large language model compression toolkit engineered for enhanced usability, comprehensiveness, and efficiency. We will open-source compression algorithms including quantization, speculative decoding, pruning, and distillation. Supporting cutting-edge mainstream LLMs, the toolkit streamlines the complete end-to-end workflow from compression to deployment.)
 
 
-AngelSlim主要特性有：
+🌟AngelSlim主要特性有：
 
 - **高度集成化**：本工具将主流的压缩算法集成到工具，开发者可一键式调用，具有很好的易用性。
 - **持续算法创新**：本工具除了集成工业界使用最广的算法，还持续自研更好的压缩算法，并且会陆续开源。
@@ -34,8 +32,8 @@ AngelSlim主要特性有：
 
 目前支持的压缩策略：
 
-- 量化：动态INT8、静态FP8、动态FP8、INT4-GPTQ、INT4-AWQ等方法；
-- 投机采样：EAGLE2、EAGLE3等方法。
+- **量化**：动态INT8、静态FP8、动态FP8、INT4-GPTQ、INT4-AWQ等方法；
+- **投机采样**：EAGLE2、EAGLE3等方法。
 
 
 ## 文档
@@ -46,8 +44,8 @@ AngelSlim主要特性有：
 :caption: 入门指南
 :maxdepth: 1
 
-getting_started/quickstrat
 getting_started/installation
+getting_started/quickstrat
 :::
 
 % Additional capabilities
@@ -88,7 +86,8 @@ deployment/deploy
 :caption: 性能表现
 :maxdepth: 1
 
-performance/benchmarks
+performance/quantization/benchmarks
+performance/speculative_decoding/benchmarks
 :::
 
 % Explanation of AngelSlim internals
@@ -102,11 +101,4 @@ design/index
 
 ## 更多
 
-想了解更多信息，可以给我们在[GitHub Issues](https://github.com/tencent/AngelSlim/issues)上留言，也可以加入我们的【微信交流群】讨论更多的技术问题。
-
-:::{figure} ./assets/logos/openslim_logo_removebg.png
-:align: center
-:alt: wechat
-:class: no-scaled-link
-:width: 50%
-:::
+想了解更多信息，可以给我们在[GitHub Issues](https://github.com/Tencent/AngelSlim/issues)上留言，也可以加入我们的[微信交流群](./docs/source/assets/angel_slim_wechat.png)讨论更多的技术问题。

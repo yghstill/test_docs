@@ -23,8 +23,8 @@ python3 tools/run.py -c configs/qwen2_5/fp8_dynamic/qwen2_5-7b_instruct_fp8_dyna
 compression:
   name: quantization
   quantization:
-    name: fp8_dynamic     # Supported: fp8_static, fp8_dynamic, int4_awq, int4_gptq, int8_dynamic
-    bits: 8               # Quantization bits
+    name: fp8_dynamic
+    bits: 8
     quant_method:
       weight: "per-tensor"
       activation: "per-tensor"
@@ -85,7 +85,11 @@ dataset:
 
 标准FP8在量化较大模型时显存占用较高，可以采用low_memory模式FP8校准模型。
 
-标准FP8静态量化`Qwen3-a22b`、`max_seq_len=4096`时需要占用约455GB显存，8卡H20; 采用low_memory时只需要22GB显存，单卡H20即可实现量化。
+标准FP8静态量化`Qwen3-235B-A22b`、`max_seq_len=4096`开启low_memory优化节约显存情况如下表所示，单卡GPU即可实现量化。
+
+| Model                         | 优化前显存占用 | 开启low_memory模式 |
+|-------------------------------|--------------|------------|
+| Qwen3-235B-A22b               | 455GB        | 22GB |
 
 
 运行示例如下：
